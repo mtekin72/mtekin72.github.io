@@ -219,4 +219,180 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
+
+    // CV Builder Functionality
+    const viewTemplatesBtn = document.querySelector('.view-templates-btn');
+    const viewTipsBtn = document.querySelector('.view-tips-btn');
+    const startBuildingBtn = document.querySelector('.start-building-btn');
+    const modals = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('.close-modal');
+    const templatesModal = document.getElementById('templatesModal');
+    const tipsModal = document.getElementById('tipsModal');
+    const builderModal = document.getElementById('builderModal');
+
+    // Modal Controls
+    function openModal(modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    viewTemplatesBtn?.addEventListener('click', () => openModal(templatesModal));
+    viewTipsBtn?.addEventListener('click', () => openModal(tipsModal));
+    startBuildingBtn?.addEventListener('click', () => openModal(builderModal));
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            modals.forEach(modal => closeModal(modal));
+        });
+    });
+
+    window.addEventListener('click', (e) => {
+        modals.forEach(modal => {
+            if (e.target === modal) {
+                closeModal(modal);
+            }
+        });
+    });
+
+    // CV Builder Form Functionality
+    const cvForm = document.getElementById('cvBuilderForm');
+    const addSkillBtn = document.querySelector('.add-skill-btn');
+    const skillsInput = document.querySelector('.skills-input input');
+    const skillsTags = document.querySelector('.skills-tags');
+    const addExperienceBtn = document.querySelector('.add-experience-btn');
+    const experienceEntries = document.querySelector('.experience-entries');
+    const addEducationBtn = document.querySelector('.add-education-btn');
+    const educationEntries = document.querySelector('.education-entries');
+
+    // Skills Management
+    addSkillBtn?.addEventListener('click', () => {
+        const skill = skillsInput.value.trim();
+        if (skill) {
+            addSkillTag(skill);
+            skillsInput.value = '';
+        }
+    });
+
+    function addSkillTag(skill) {
+        const tag = document.createElement('div');
+        tag.className = 'skill-tag';
+        tag.innerHTML = `
+            ${skill}
+            <span class="remove-skill">&times;</span>
+        `;
+        
+        tag.querySelector('.remove-skill').addEventListener('click', () => {
+            tag.remove();
+        });
+        
+        skillsTags.appendChild(tag);
+    }
+
+    // Experience Entry Management
+    addExperienceBtn?.addEventListener('click', () => {
+        const experienceEntry = document.createElement('div');
+        experienceEntry.className = 'experience-entry form-section';
+        experienceEntry.innerHTML = `
+            <button type="button" class="remove-entry">&times;</button>
+            <input type="text" placeholder="Company Name" required>
+            <input type="text" placeholder="Position" required>
+            <div class="date-range">
+                <input type="month" placeholder="Start Date" required>
+                <input type="month" placeholder="End Date">
+                <label><input type="checkbox"> Current Position</label>
+            </div>
+            <textarea placeholder="Describe your testing responsibilities and achievements" rows="4" required></textarea>
+        `;
+        
+        experienceEntry.querySelector('.remove-entry').addEventListener('click', () => {
+            experienceEntry.remove();
+        });
+        
+        experienceEntries.appendChild(experienceEntry);
+    });
+
+    // Education Entry Management
+    addEducationBtn?.addEventListener('click', () => {
+        const educationEntry = document.createElement('div');
+        educationEntry.className = 'education-entry form-section';
+        educationEntry.innerHTML = `
+            <button type="button" class="remove-entry">&times;</button>
+            <input type="text" placeholder="Institution/Certificate Name" required>
+            <input type="text" placeholder="Degree/Certification" required>
+            <div class="date-range">
+                <input type="month" placeholder="Start Date" required>
+                <input type="month" placeholder="End Date">
+            </div>
+            <textarea placeholder="Description (Optional)" rows="2"></textarea>
+        `;
+        
+        educationEntry.querySelector('.remove-entry').addEventListener('click', () => {
+            educationEntry.remove();
+        });
+        
+        educationEntries.appendChild(educationEntry);
+    });
+
+    // CV Generation
+    cvForm?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Collect form data
+        const formData = new FormData(cvForm);
+        const skills = Array.from(skillsTags.children).map(tag => tag.textContent.trim());
+        const experiences = Array.from(experienceEntries.children).map(entry => ({
+            company: entry.querySelector('input[placeholder="Company Name"]').value,
+            position: entry.querySelector('input[placeholder="Position"]').value,
+            startDate: entry.querySelector('input[type="month"]:first-of-type').value,
+            endDate: entry.querySelector('input[type="month"]:last-of-type').value,
+            current: entry.querySelector('input[type="checkbox"]')?.checked,
+            description: entry.querySelector('textarea').value
+        }));
+        const education = Array.from(educationEntries.children).map(entry => ({
+            institution: entry.querySelector('input[placeholder="Institution/Certificate Name"]').value,
+            degree: entry.querySelector('input[placeholder="Degree/Certification"]').value,
+            startDate: entry.querySelector('input[type="month"]:first-of-type').value,
+            endDate: entry.querySelector('input[type="month"]:last-of-type').value,
+            description: entry.querySelector('textarea').value
+        }));
+
+        // Generate CV (you can customize this part based on your template)
+        const cvData = {
+            personalInfo: {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                location: formData.get('location')
+            },
+            summary: formData.get('summary'),
+            skills,
+            experiences,
+            education
+        };
+
+        try {
+            // Here you would typically send the data to a backend service
+            // For now, we'll just show a success message
+            showNotification('CV generated successfully! Download will start shortly.', 'success');
+            // Simulate CV generation delay
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            // Generate and download CV (this is a placeholder)
+            generateCV(cvData);
+        } catch (error) {
+            showNotification('Error generating CV. Please try again.', 'error');
+        }
+    });
+
+    function generateCV(data) {
+        // This is a placeholder function
+        // In a real implementation, you would generate a PDF using a library like jsPDF
+        // or send the data to a backend service that generates the PDF
+        console.log('Generating CV with data:', data);
+        showNotification('CV generation feature coming soon!', 'info');
+    }
 });

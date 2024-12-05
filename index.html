@@ -10,6 +10,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
     <link rel="stylesheet" href="styles.css">
+    <div class="language-switcher">
+        <button class="current-lang">
+            <img src="flags/en.svg" alt="English" class="lang-flag">
+            <span>EN</span>
+        </button>
+        <ul class="lang-dropdown">
+            <li data-lang="en" class="active">
+                <img src="flags/en.svg" alt="English" class="lang-flag">
+                <span>English</span>
+            </li>
+            <li data-lang="nl">
+                <img src="flags/nl.svg" alt="Dutch" class="lang-flag">
+                <span>Nederlands</span>
+            </li>
+            <li data-lang="tr">
+                <img src="flags/tr.svg" alt="Turkish" class="lang-flag">
+                <span>Türkçe</span>
+            </li>
+            <li data-lang="fr">
+                <img src="flags/fr.svg" alt="French" class="lang-flag">
+                <span>Français</span>
+            </li>
+            <li data-lang="de">
+                <img src="flags/de.svg" alt="German" class="lang-flag">
+                <span>Deutsch</span>
+            </li>
+            <li data-lang="es">
+                <img src="flags/es.svg" alt="Spanish" class="lang-flag">
+                <span>Español</span>
+            </li>
+        </ul>
+    </div>
 </head>
 <body>
     <nav class="navbar">
@@ -20,6 +52,7 @@
                 <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#articles">Articles</a></li>
+                <li><a href="#cv-builder">CV Builder</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#cv" class="cv-button">Download CV</a></li>
             </ul>
@@ -66,8 +99,9 @@
                     </div>
                     <h3>Test Automation</h3>
                     <ul>
-                        <li>Playwright Framework</li>
-                        <li>Selenium WebDriver</li>
+                        <li>Cypress Framework</li>
+                        <li>Playwright Framework coming soon</li>
+                        <li>Selenium Framework</li>
                         <li>API Testing (RestSharp)</li>
                         <li>Performance Testing</li>
                     </ul>
@@ -78,9 +112,8 @@
                     </div>
                     <h3>Programming</h3>
                     <ul>
-                        <li>C# / .NET Core</li>
-                        <li>JavaScript / TypeScript</li>
-                        <li>Python</li>
+                        <li>Javascript</li>
+                        <li>Javali>
                         <li>SQL</li>
                     </ul>
                 </div>
@@ -202,6 +235,142 @@ public class TestBase
                         <a href="#" class="btn btn-text">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="cv-builder" class="cv-builder-section">
+        <div class="container">
+            <h2>QA Professional CV Builder</h2>
+            <p class="section-description">Create a professional CV tailored for Test Automation and QA roles. Choose from our specialized templates and get expert guidance on highlighting your testing expertise.</p>
+            
+            <div class="cv-builder-features">
+                <div class="feature-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Templates</h3>
+                    <p>Choose from QA-focused templates highlighting test automation, manual testing, and leadership skills.</p>
+                    <button class="btn-primary view-templates-btn">View Templates</button>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Expert Tips</h3>
+                    <p>Get guidance on showcasing your testing frameworks, tools, and methodologies effectively.</p>
+                    <button class="btn-primary view-tips-btn">View Tips</button>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-edit"></i>
+                    <h3>Build Your CV</h3>
+                    <p>Use our interactive builder to create your professional QA CV step by step.</p>
+                    <button class="btn-primary start-building-btn">Start Building</button>
+                </div>
+            </div>
+
+            <!-- CV Tips Modal -->
+            <div id="tipsModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h3>QA CV Writing Tips</h3>
+                    <div class="tips-content">
+                        <div class="tip">
+                            <h4>1. Highlight Automation Frameworks</h4>
+                            <p>Emphasize your experience with popular frameworks like Selenium, Playwright, Cypress, or TestNG.</p>
+                        </div>
+                        <div class="tip">
+                            <h4>2. Showcase Testing Methodologies</h4>
+                            <p>Include your expertise in Agile testing, TDD, BDD, and CI/CD practices.</p>
+                        </div>
+                        <div class="tip">
+                            <h4>3. Quantify Your Impact</h4>
+                            <p>Add metrics like test coverage improvement, bug detection rates, or automation ROI.</p>
+                        </div>
+                        <div class="tip">
+                            <h4>4. Technical Skills Section</h4>
+                            <p>List programming languages, testing tools, and relevant certifications prominently.</p>
+                        </div>
+                        <div class="tip">
+                            <h4>5. Project Highlights</h4>
+                            <p>Detail specific testing projects, including challenges overcome and solutions implemented.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Templates Modal -->
+            <div id="templatesModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h3>QA CV Templates</h3>
+                    <div class="templates-grid">
+                        <div class="template-card">
+                            <img src="template1-preview.jpg" alt="Automation Engineer Template">
+                            <h4>Automation Engineer</h4>
+                            <p>Perfect for highlighting test automation expertise and programming skills.</p>
+                            <button class="btn-secondary use-template-btn">Use Template</button>
+                        </div>
+                        <div class="template-card">
+                            <img src="template2-preview.jpg" alt="Manual QA Template">
+                            <h4>Manual QA</h4>
+                            <p>Ideal for showcasing detailed testing processes and bug tracking abilities.</p>
+                            <button class="btn-secondary use-template-btn">Use Template</button>
+                        </div>
+                        <div class="template-card">
+                            <img src="template3-preview.jpg" alt="QA Lead Template">
+                            <h4>QA Lead</h4>
+                            <p>Emphasizes leadership skills and test strategy development.</p>
+                            <button class="btn-secondary use-template-btn">Use Template</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CV Builder Form Modal -->
+            <div id="builderModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h3>Build Your QA CV</h3>
+                    <form id="cvBuilderForm" class="cv-form">
+                        <div class="form-section">
+                            <h4>Personal Information</h4>
+                            <input type="text" placeholder="Full Name" required>
+                            <input type="email" placeholder="Email" required>
+                            <input type="text" placeholder="Phone">
+                            <input type="text" placeholder="Location">
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Professional Summary</h4>
+                            <textarea placeholder="Brief overview of your QA experience and expertise" rows="4"></textarea>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Technical Skills</h4>
+                            <div class="skills-input">
+                                <input type="text" placeholder="Add a skill (e.g., Selenium, Java, API Testing)">
+                                <button type="button" class="add-skill-btn">Add</button>
+                            </div>
+                            <div class="skills-tags"></div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Work Experience</h4>
+                            <button type="button" class="add-experience-btn">Add Experience</button>
+                            <div class="experience-entries"></div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Education & Certifications</h4>
+                            <button type="button" class="add-education-btn">Add Education/Certification</button>
+                            <div class="education-entries"></div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Generate CV</button>
+                            <button type="button" class="btn-secondary preview-btn">Preview</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
