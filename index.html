@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M Tekin | Test Automation Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">MT</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>M Tekin</h1>
+                    <h2>Test Automation Engineer</h2>
+                    <p>Crafting robust test automation solutions with Playwright & C#</p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                        <a href="#portfolio" class="btn btn-secondary">View Portfolio</a>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label">Test Cases Automated</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Test Automation</h3>
+                    <ul>
+                        <li>Playwright Framework</li>
+                        <li>Selenium WebDriver</li>
+                        <li>API Testing (RestSharp)</li>
+                        <li>Performance Testing</li>
+                    </ul>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>C# / .NET Core</li>
+                        <li>JavaScript / TypeScript</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Tools & Frameworks</h3>
+                    <ul>
+                        <li>Azure DevOps</li>
+                        <li>Jenkins</li>
+                        <li>Git</li>
+                        <li>Docker</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Featured Work</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <h3>E-Commerce Test Framework</h3>
+                        <p>Developed a comprehensive test automation framework for a large-scale e-commerce platform using Playwright and C#.</p>
+                        <div class="tech-stack">
+                            <span>Playwright</span>
+                            <span>C#</span>
+                            <span>Azure DevOps</span>
+                        </div>
+                        <div class="portfolio-stats">
+                            <div class="stat">
+                                <span class="number">90%</span>
+                                <span class="label">Test Coverage</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">50%</span>
+                                <span class="label">Faster Execution</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <h3>API Testing Suite</h3>
+                        <p>Built an automated API testing suite using RestSharp and C# for a microservices architecture.</p>
+                        <div class="tech-stack">
+                            <span>RestSharp</span>
+                            <span>C#</span>
+                            <span>Jenkins</span>
+                        </div>
+                        <div class="portfolio-stats">
+                            <div class="stat">
+                                <span class="number">100+</span>
+                                <span class="label">API Endpoints</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">99%</span>
+                                <span class="label">Reliability</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="articles" class="articles">
+        <div class="container">
+            <h2 class="section-title">Technical Articles</h2>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-content">
+                        <h3>Getting Started with Playwright in C#</h3>
+                        <p>A comprehensive guide to setting up and implementing your first automated tests using Playwright with C#.</p>
+                        <div class="code-preview">
+                            <pre><code class="language-csharp">
+using Microsoft.Playwright;
+
+public class PlaywrightTests
+{
+    public async Task BasicTest()
+    {
+        using var playwright = await Playwright.CreateAsync();
+        await using var browser = await playwright.Chromium.LaunchAsync();
+        var page = await browser.NewPageAsync();
+        
+        await page.GotoAsync("https://example.com");
+        await page.GetByRole(AriaRole.Button).ClickAsync();
+        await page.ScreenshotAsync(new() { Path = "screenshot.png" });
+    }
+}</code></pre>
+                        </div>
+                        <a href="#" class="btn btn-text">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-content">
+                        <h3>Advanced C# Test Patterns</h3>
+                        <p>Explore advanced design patterns and best practices for building maintainable test automation frameworks.</p>
+                        <div class="code-preview">
+                            <pre><code class="language-csharp">
+public class TestBase
+{
+    protected IPage Page;
+    protected IBrowser Browser;
+    
+    [OneTimeSetUp]
+    public async Task Setup()
+    {
+        var playwright = await Playwright.CreateAsync();
+        Browser = await playwright.Chromium.LaunchAsync();
+        Page = await Browser.NewPageAsync();
+    }
+}</code></pre>
+                        </div>
+                        <a href="#" class="btn btn-text">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">Let's Connect</h2>
+                    <p>Interested in improving your test automation? Let's discuss how we can work together.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">MT</div>
+                <div class="footer-links">
+                    <a href="#expertise">Expertise</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#articles">Articles</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 M Tekin. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-csharp.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
